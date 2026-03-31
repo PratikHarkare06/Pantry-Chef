@@ -1244,6 +1244,45 @@ const speakCookingStep = () => {
 // ─── COOKING TIMER ────────────────────────────────────────────────────────────
 let _timerInterval = null;
 let _timerSeconds  = 0;
+let _timerTotal    = 0;
+
+// ── Floating pill (visible while recipe is shown) ─────────────────────────────
+const ensureFloatingPill = () => {
+  let pill = document.getElementById("timer-float-pill");
+  if (!pill) {
+    pill = document.createElement("button");
+    pill.id = "timer-float-pill";
+    pill.setAttribute("aria-label", "Open timer");
+    pill.innerHTML = `<span class="material-symbols-rounded">timer</span><span id="timer-float-time">5:00</span>`;
+    pill.addEventListener("click", openTimerModal);
+    document.body.appendChild(pill);
+  }
+  return pill;
+};
+
+const showFloatingPill = (timeText) => {
+  const pill = ensureFloatingPill();
+  document.getElementById("timer-float-time").textContent = timeText;
+  pill.classList.remove("done");
+  pill.classList.add("visible");
+};
+
+const hideFloatingPill = () => {
+  const pill = document.getElementById("timer-float-pill");
+  if (pill) pill.classList.remove("visible", "done");
+};
+
+const setFloatingPillDone = () => {
+  const pill = document.getElementById("timer-float-pill");
+  if (!pill) return;
+  document.getElementById("timer-float-time").textContent = "Done!";
+  pill.querySelector(".material-symbols-rounded").textContent = "check_circle";
+  pill.classList.add("done", "visible");
+  setTimeout(() => {
+    pill.classList.remove("visible", "done");
+    pill.querySelector(".material-symbols-rounded").textContent = "timer";
+  }, 4000);
+};
 
 const openTimerModal = () => {
   let modal = document.getElementById("timer-modal");
@@ -1281,9 +1320,10 @@ const openTimerModal = () => {
     // Preset buttons
     modal.querySelectorAll(".timer-preset").forEach(btn => {
       btn.addEventListener("click", () => {
-        clearInterval(_timerInterval);
+        clearInterval(_timerInterval); _timerInterval = null;
         _timerSeconds = parseInt(btn.dataset.secs);
-        updateTimerDisplay(_timerSeconds, parseInt(btn.dataset.secs));
+        _timerTotal   = _timerSeconds;
+        updateTimerDisplay(_timerSeconds, _timerSeconds);
         modal.querySelectorAll(".timer-preset").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         document.getElementById("timer-start-btn").textContent = "Start";
@@ -1293,18 +1333,31 @@ const openTimerModal = () => {
     document.getElementById("timer-start-btn").addEventListener("click", () => {
       const startBtn = document.getElementById("timer-start-btn");
       if (_timerInterval) {
+        // PAUSE
         clearInterval(_timerInterval); _timerInterval = null;
         startBtn.textContent = "Resume";
+        // Keep pill visible but paused
+        const m = Math.floor(_timerSeconds / 60);
+        const s = _timerSeconds % 60;
+        showFloatingPill(`⏸ ${m}:${s < 10 ? "0" : ""}${s}`);
       } else {
         if (_timerSeconds <= 0) _timerSeconds = 300;
-        const totalSecs = _timerSeconds;
+        if (_timerTotal === 0) _timerTotal = _timerSeconds;
+        const totalSecs = _timerTotal;
         startBtn.textContent = "Pause";
+        // Close modal so cooking step is visible, show floating pill
+        closeTimerModal();
+        const m0 = Math.floor(_timerSeconds / 60);
+        const s0 = _timerSeconds % 60;
+        showFloatingPill(`${m0}:${s0 < 10 ? "0" : ""}${s0}`);
         _timerInterval = setInterval(() => {
           _timerSeconds--;
           updateTimerDisplay(_timerSeconds, totalSecs);
           if (_timerSeconds <= 0) {
             clearInterval(_timerInterval); _timerInterval = null;
             startBtn.textContent = "Start";
+            _timerTotal = 0;
+            setFloatingPillDone();
             playTimerAlert();
           }
         }, 1000);
@@ -1314,9 +1367,11 @@ const openTimerModal = () => {
     document.getElementById("timer-reset-btn").addEventListener("click", () => {
       clearInterval(_timerInterval); _timerInterval = null;
       _timerSeconds = 0;
+      _timerTotal = 0;
       updateTimerDisplay(0, 1);
       document.getElementById("timer-start-btn").textContent = "Start";
       document.querySelectorAll(".timer-preset").forEach(b => b.classList.remove("active"));
+      hideFloatingPill();
     });
 
     document.getElementById("timer-close-btn").addEventListener("click", closeTimerModal);
@@ -1338,14 +1393,19 @@ const closeTimerModal = () => {
 const updateTimerDisplay = (remaining, total) => {
   const el = document.getElementById("timer-display");
   const ring = document.getElementById("timer-ring");
-  if (!el) return;
   const m = Math.floor(remaining / 60);
   const s = remaining % 60;
-  el.textContent = `${m}:${s < 10 ? "0" : ""}${s}`;
+  const timeStr = `${m}:${s < 10 ? "0" : ""}${s}`;
+  if (el) el.textContent = timeStr;
   if (ring) {
     const circumference = 327;
     const progress = total > 0 ? remaining / total : 0;
     ring.style.strokeDashoffset = circumference * (1 - progress);
+  }
+  // Also update the floating pill if it's visible
+  const pillTime = document.getElementById("timer-float-time");
+  if (pillTime && document.getElementById("timer-float-pill")?.classList.contains("visible")) {
+    pillTime.textContent = timeStr;
   }
 };
 

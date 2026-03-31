@@ -1756,3 +1756,47 @@ Feature: Shopping List — ingredient checklist
 }
 .shopping-all-good .material-symbols-rounded { font-size: 40px; }
 .shopping-all-good p { font-size: 15px; font-weight: 700; color: var(--primary-text); }
+
+/* ─── FLOATING TIMER PILL ───────────────────────────────────────────────────── */
+#timer-float-pill {
+  position: fixed;
+  top: 80px;
+  right: max(16px, calc(50vw - 215px + 12px));
+  z-index: 8000;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px 10px 14px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(74, 103, 65, 0.45);
+  cursor: pointer;
+  border: none;
+  /* hidden by default */
+  opacity: 0;
+  transform: translateY(-16px) scale(0.88);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#timer-float-pill .material-symbols-rounded {
+  font-size: 19px;
+  line-height: 1;
+}
+#timer-float-pill.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+#timer-float-pill.done {
+  background: var(--success, #2e7d32);
+  animation: pill-done-pulse 0.5s ease 0s 2;
+}
+@keyframes pill-done-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
