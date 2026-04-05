@@ -162,6 +162,7 @@ const recipeDatabase = [
     badge: "Chef's Choice", badgeType: "green",
     desc: "A satisfying wok-tossed fried rice packed with juicy chicken, vegetables, and soy sauce.",
     time: "25 min", prepTime: "10 min", cookTime: "15 min", difficulty: "Easy", rating: "4.7",
+    nutrition: { kcal: 480, protein: "34g", carbs: "52g", fat: "12g" },
     primary: ["chicken", "rice"],
     keywords: ["chicken", "rice", "egg", "soy sauce", "onion", "carrot", "garlic"],
     steps: [
@@ -178,6 +179,7 @@ const recipeDatabase = [
     badge: "Chef's Choice", badgeType: "green",
     desc: "Fragrant slow-cooked basmati rice layered with spiced chicken — a true classic.",
     time: "60 min", prepTime: "20 min", cookTime: "40 min", difficulty: "Intermediate", rating: "4.9",
+    nutrition: { kcal: 620, protein: "38g", carbs: "68g", fat: "16g" },
     primary: ["chicken", "rice"],
     keywords: ["chicken", "rice", "basmati", "onion", "tomato", "garam masala", "yogurt", "saffron"],
     steps: [
@@ -194,6 +196,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "terracotta",
     desc: "Glazed chicken thighs over steamed rice with a sweet-savory teriyaki sauce.",
     time: "30 min", prepTime: "10 min", cookTime: "20 min", difficulty: "Easy", rating: "4.6",
+    nutrition: { kcal: 510, protein: "36g", carbs: "58g", fat: "11g" },
     primary: ["chicken", "rice"],
     keywords: ["chicken", "rice", "soy sauce", "honey", "garlic", "ginger", "sesame"],
     steps: [
@@ -210,6 +213,7 @@ const recipeDatabase = [
     badge: "Chef's Choice", badgeType: "green",
     desc: "Tender chicken in a velvety, mildly spiced tomato-cream sauce. Restaurant style at home.",
     time: "45 min", prepTime: "15 min", cookTime: "30 min", difficulty: "Intermediate", rating: "4.9",
+    nutrition: { kcal: 540, protein: "35g", carbs: "22g", fat: "34g" },
     primary: ["chicken"],
     keywords: ["chicken", "tomato", "cream", "butter", "onion", "garlic", "ginger", "spices"],
     steps: [
@@ -226,6 +230,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "terracotta",
     desc: "Perfectly seasoned grilled chicken breast — juicy inside, golden outside.",
     time: "25 min", prepTime: "10 min", cookTime: "15 min", difficulty: "Easy", rating: "4.4",
+    nutrition: { kcal: 290, protein: "42g", carbs: "2g", fat: "12g" },
     primary: ["chicken"],
     keywords: ["chicken", "garlic", "lemon", "olive oil", "herbs"],
     steps: [
@@ -242,6 +247,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "terracotta",
     desc: "Quick and satisfying fried rice with scrambled eggs and vegetables.",
     time: "15 min", prepTime: "5 min", cookTime: "10 min", difficulty: "Easy", rating: "4.4",
+    nutrition: { kcal: 380, protein: "14g", carbs: "56g", fat: "10g" },
     primary: ["egg", "rice"],
     keywords: ["egg", "rice", "onion", "carrot", "garlic", "soy sauce"],
     steps: [
@@ -257,6 +263,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "terracotta",
     desc: "A gorgeous Italian baked egg dish packed with spinach and potato.",
     time: "30 min", prepTime: "10 min", cookTime: "20 min", difficulty: "Medium", rating: "4.5",
+    nutrition: { kcal: 320, protein: "18g", carbs: "24g", fat: "16g" },
     primary: ["egg", "potato", "spinach"],
     keywords: ["egg", "spinach", "potato", "onion", "cheese"],
     steps: [
@@ -272,6 +279,7 @@ const recipeDatabase = [
     badge: "New Recipe", badgeType: "peach",
     desc: "A spiced Indian-style omelette with onions, green chili, tomato, and coriander.",
     time: "10 min", prepTime: "3 min", cookTime: "7 min", difficulty: "Easy", rating: "4.3",
+    nutrition: { kcal: 220, protein: "16g", carbs: "6g", fat: "14g" },
     primary: ["egg"],
     keywords: ["egg", "onion", "tomato", "chili", "coriander", "spices"],
     steps: [
@@ -288,6 +296,7 @@ const recipeDatabase = [
     badge: "New Recipe", badgeType: "peach",
     desc: "Pan-seared salmon with a bright lemon herb crust — 18 minutes to perfection.",
     time: "18 min", prepTime: "5 min", cookTime: "13 min", difficulty: "Medium", rating: "4.8",
+    nutrition: { kcal: 360, protein: "40g", carbs: "4g", fat: "20g" },
     primary: ["salmon", "fish"],
     keywords: ["salmon", "fish", "lemon", "garlic", "butter", "herbs"],
     steps: [
@@ -304,6 +313,7 @@ const recipeDatabase = [
     badge: "New Recipe", badgeType: "peach",
     desc: "A simple, vibrant pasta with a rich tomato base and fresh herbs.",
     time: "20 min", prepTime: "5 min", cookTime: "15 min", difficulty: "Easy", rating: "4.5",
+    nutrition: { kcal: 420, protein: "14g", carbs: "72g", fat: "9g" },
     primary: ["pasta", "tomato"],
     keywords: ["pasta", "tomato", "garlic", "basil", "olive oil"],
     steps: [
@@ -319,6 +329,7 @@ const recipeDatabase = [
     badge: "Chef's Choice", badgeType: "green",
     desc: "A 15-minute pantry staple using just garlic, cream, and parmesan.",
     time: "15 min", prepTime: "5 min", cookTime: "10 min", difficulty: "Easy", rating: "4.7",
+    nutrition: { kcal: 560, protein: "18g", carbs: "68g", fat: "24g" },
     primary: ["pasta", "garlic"],
     keywords: ["pasta", "garlic", "cream", "cheese", "butter"],
     steps: [
@@ -335,6 +346,7 @@ const recipeDatabase = [
     badge: "Chef's Choice", badgeType: "green",
     desc: "Smoky spiced paneer with peppers and onions — no oven needed.",
     time: "20 min", prepTime: "8 min", cookTime: "12 min", difficulty: "Medium", rating: "4.6",
+    nutrition: { kcal: 390, protein: "22g", carbs: "18g", fat: "26g" },
     primary: ["paneer"],
     keywords: ["paneer", "tomato", "onion", "pepper", "capsicum", "yogurt", "spices"],
     steps: [
@@ -350,6 +362,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "terracotta",
     desc: "Creamy spinach sauce with soft paneer cubes — a North Indian favourite.",
     time: "35 min", prepTime: "10 min", cookTime: "25 min", difficulty: "Medium", rating: "4.7",
+    nutrition: { kcal: 350, protein: "20g", carbs: "14g", fat: "22g" },
     primary: ["paneer", "spinach"],
     keywords: ["paneer", "spinach", "onion", "tomato", "garlic", "cream", "spices"],
     steps: [
@@ -366,6 +379,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "green",
     desc: "Warm, comforting red lentil dal with aromatic spices.",
     time: "30 min", prepTime: "5 min", cookTime: "25 min", difficulty: "Easy", rating: "4.5",
+    nutrition: { kcal: 280, protein: "16g", carbs: "42g", fat: "5g" },
     primary: ["lentil", "dal"],
     keywords: ["lentil", "dal", "tomato", "onion", "garlic", "rice"],
     steps: [
@@ -382,6 +396,7 @@ const recipeDatabase = [
     badge: "New Recipe", badgeType: "peach",
     desc: "Earthy mushrooms sautéed with garlic on crispy toast — a perfect quick snack.",
     time: "12 min", prepTime: "3 min", cookTime: "9 min", difficulty: "Easy", rating: "4.2",
+    nutrition: { kcal: 240, protein: "8g", carbs: "28g", fat: "11g" },
     primary: ["mushroom", "bread"],
     keywords: ["mushroom", "garlic", "butter", "bread", "toast"],
     steps: [
@@ -397,6 +412,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "terracotta",
     desc: "Classic dry-cooked potato and cauliflower sabzi with warming spices.",
     time: "30 min", prepTime: "10 min", cookTime: "20 min", difficulty: "Easy", rating: "4.4",
+    nutrition: { kcal: 210, protein: "6g", carbs: "34g", fat: "7g" },
     primary: ["potato", "cauliflower"],
     keywords: ["potato", "cauliflower", "aloo", "gobi", "onion", "tomato", "garlic", "spices"],
     steps: [
@@ -412,6 +428,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "terracotta",
     desc: "A colourful, healthy stir-fry ready in 10 minutes — perfect for any combination of vegetables.",
     time: "15 min", prepTime: "5 min", cookTime: "10 min", difficulty: "Easy", rating: "4.3",
+    nutrition: { kcal: 160, protein: "5g", carbs: "22g", fat: "6g" },
     primary: ["vegetable"],
     keywords: ["onion", "carrot", "pepper", "capsicum", "broccoli", "garlic", "soy sauce", "ginger"],
     steps: [
@@ -428,6 +445,7 @@ const recipeDatabase = [
     badge: "Chef's Choice", badgeType: "green",
     desc: "Slow-cooked mutton in a deeply spiced onion-tomato gravy. Rich and hearty.",
     time: "70 min", prepTime: "15 min", cookTime: "55 min", difficulty: "Intermediate", rating: "4.8",
+    nutrition: { kcal: 580, protein: "44g", carbs: "16g", fat: "36g" },
     primary: ["mutton", "lamb"],
     keywords: ["mutton", "lamb", "onion", "tomato", "garlic", "ginger", "spices", "garam masala"],
     steps: [
@@ -445,6 +463,7 @@ const recipeDatabase = [
     badge: "Healthy", badgeType: "terracotta",
     desc: "Creamy smashed avocado on toasted sourdough with a poached egg on top.",
     time: "10 min", prepTime: "5 min", cookTime: "5 min", difficulty: "Easy", rating: "4.5",
+    nutrition: { kcal: 320, protein: "12g", carbs: "28g", fat: "18g" },
     primary: ["avocado", "bread"],
     keywords: ["avocado", "bread", "egg", "tomato", "lemon", "salt"],
     steps: [
@@ -997,6 +1016,43 @@ const renderDetail = () => {
   // Reset translation section
   const transSec = document.getElementById("translation-section");
   if (transSec) transSec.style.display = "none";
+
+  // Nutrition panel
+  const nutEl = document.getElementById("detail-nutrition-panel");
+  if (nutEl) {
+    const n = recipe.nutrition;
+    if (n) {
+      nutEl.innerHTML = `
+        <div class="nut-tile"><span class="nut-val">${n.kcal}</span><span class="nut-label">kcal</span></div>
+        <div class="nut-tile"><span class="nut-val">${n.protein}</span><span class="nut-label">Protein</span></div>
+        <div class="nut-tile"><span class="nut-val">${n.carbs}</span><span class="nut-label">Carbs</span></div>
+        <div class="nut-tile"><span class="nut-val">${n.fat}</span><span class="nut-label">Fat</span></div>`;
+      nutEl.style.display = "grid";
+    } else {
+      nutEl.style.display = "none";
+    }
+  }
+
+  // User star rating display
+  const starEl = document.getElementById("detail-user-rating");
+  if (starEl) {
+    const key = recipe.title;
+    const saved = state.userRatings[key];
+    starEl.innerHTML = saved
+      ? `<span class="user-star-label">Your Rating:</span>${[1,2,3,4,5].map(i =>
+          `<span class="user-star ${i <= saved ? 'filled' : ''}" data-star="${i}">★</span>`).join('')}`
+      : `<span class="user-star-label">Rate this recipe:</span>${[1,2,3,4,5].map(i =>
+          `<span class="user-star" data-star="${i}">☆</span>`).join('')}`;
+    starEl.querySelectorAll(".user-star").forEach(s => {
+      s.addEventListener("click", () => {
+        const stars = parseInt(s.dataset.star);
+        state.userRatings[recipe.title] = stars;
+        localStorage.setItem("userRatings", JSON.stringify(state.userRatings));
+        renderDetail();
+        showToast(`Rated ${stars} star${stars > 1 ? 's' : ''}! ⭐`);
+      });
+    });
+  }
 
   // Reset bookmark icon
   const favSpan = document.querySelector("#favorite-detail span");
@@ -1789,19 +1845,90 @@ const cookedBtn = document.getElementById("cooked-this-btn");
 if (cookedBtn) {
   cookedBtn.addEventListener("click", () => {
     if (!state.currentRecipe) return;
-    const t = state.currentRecipe.title;
-    if (!state.cookedRecipes.includes(t)) { state.cookedRecipes.push(t); localStorage.setItem("cookedRecipes", JSON.stringify(state.cookedRecipes)); }
-    state.cookedCount++;
-    localStorage.setItem("cookedCount", JSON.stringify(state.cookedCount));
-    addXP(100);
-    renderSavedStats(); renderProfileStats(); renderWeeklyChart();
-    showToast("Magnifique! Cooked logged! +100 XP");
+    openStarRatingModal();
   });
 }
+
+// Star Rating Modal
+const openStarRatingModal = () => {
+  let modal = document.getElementById("star-rating-modal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "star-rating-modal";
+    modal.innerHTML = `
+      <div class="star-modal-backdrop" id="star-modal-backdrop"></div>
+      <div class="star-modal-sheet">
+        <div class="timer-header">
+          <span class="timer-title">🍽️ How was it?</span>
+          <button class="timer-close" id="star-modal-close" aria-label="Close"><span class="material-symbols-rounded">close</span></button>
+        </div>
+        <p class="star-modal-sub">Rate your cooking experience</p>
+        <div class="star-modal-stars" id="star-modal-row">
+          ${[1,2,3,4,5].map(i => `<button class="star-modal-btn" data-star="${i}">★</button>`).join('')}
+        </div>
+        <button class="star-modal-skip" id="star-modal-skip">Skip & Log Without Rating</button>
+      </div>`;
+    document.body.appendChild(modal);
+
+    document.getElementById("star-modal-backdrop").addEventListener("click", closeStarRatingModal);
+    document.getElementById("star-modal-close").addEventListener("click", closeStarRatingModal);
+    document.getElementById("star-modal-skip").addEventListener("click", () => {
+      logCookedRecipe(null); closeStarRatingModal();
+    });
+    modal.querySelectorAll(".star-modal-btn").forEach(btn => {
+      btn.addEventListener("mouseenter", () => {
+        const hov = parseInt(btn.dataset.star);
+        modal.querySelectorAll(".star-modal-btn").forEach((b, i) => b.classList.toggle("hovered", i < hov));
+      });
+      btn.addEventListener("mouseleave", () => {
+        modal.querySelectorAll(".star-modal-btn").forEach(b => b.classList.remove("hovered"));
+      });
+      btn.addEventListener("click", () => {
+        const stars = parseInt(btn.dataset.star);
+        if (state.currentRecipe) {
+          state.userRatings[state.currentRecipe.title] = stars;
+          localStorage.setItem("userRatings", JSON.stringify(state.userRatings));
+          renderDetail();
+        }
+        logCookedRecipe(stars);
+        closeStarRatingModal();
+      });
+    });
+  }
+  modal.classList.add("open");
+};
+
+const closeStarRatingModal = () => {
+  const m = document.getElementById("star-rating-modal");
+  if (m) m.classList.remove("open");
+};
+
+const logCookedRecipe = (stars) => {
+  if (!state.currentRecipe) return;
+  const t = state.currentRecipe.title;
+  if (!state.cookedRecipes.includes(t)) { state.cookedRecipes.push(t); localStorage.setItem("cookedRecipes", JSON.stringify(state.cookedRecipes)); }
+  state.cookedCount++;
+  localStorage.setItem("cookedCount", JSON.stringify(state.cookedCount));
+  addXP(100);
+  renderSavedStats(); renderProfileStats(); renderWeeklyChart();
+  const msg = stars ? `Magnifique! ${stars}⭐ — Logged! +100 XP` : "Cooked logged! +100 XP 🍳";
+  showToast(msg);
+};
 
 // Translate
 const translateBtn = document.getElementById("translate-recipe-btn");
 if (translateBtn) translateBtn.addEventListener("click", translateRecipeToHinglish);
+
+// ─── PWA — REGISTER SERVICE WORKER ───────────────────────────────────────────
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").then((reg) => {
+      console.log("[SW] Registered:", reg.scope);
+    }).catch((err) => {
+      console.warn("[SW] Registration failed:", err);
+    });
+  });
+}
 
 // Preferences
 document.getElementById("preference-tags").addEventListener("click", e => {

@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pantry Chef — Culinary Journal</title>
     <meta name="description" content="Your personal culinary journal. Discover recipes, track your cooking journey, and master your pantry." />
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#3A5F2D" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Pantry Chef" />
+    <link rel="apple-touch-icon" href="chef_avatar.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -205,6 +212,12 @@
                 <div class="meta-lbl">Nutrition</div>
               </div>
             </div>
+
+            <!-- Nutrition Panel (filled dynamically) -->
+            <div class="detail-nutrition-panel" id="detail-nutrition-panel" style="display:none;"></div>
+
+            <!-- User Star Rating -->
+            <div class="detail-user-rating" id="detail-user-rating"></div>
 
             <!-- Ingredients with Metric/US toggle -->
             <div class="detail-section-header">
